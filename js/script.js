@@ -18,7 +18,7 @@ var y = d3.scale.linear()
 // 3.
 //HOW DO THEY x AND y AXIS GET DRAWN?
 /*d3.svg.axis() returns a default axis, and if scale() is 
-specified with an predetermined array it will show as the x or y controls */
+specified with an predetermined array, it will show as the x or y controls */
 var xAxis = d3.svg.axis()
     .scale(x)
     .orient("bottom");/* 
