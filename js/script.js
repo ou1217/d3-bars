@@ -1,10 +1,14 @@
 // 1.
 //WHAT'S GOING ON HERE? WHERE DOES IT GET USED AND WHAT DOES IT AFFECT?
+/*Define the dimension of the chartting area and is used later:height equals the css-controlled container height of 500px minus the top and bottom margins; the same for the width.*/.
+
 var margin = {top: 20, right: 20, bottom: 30, left: 40},
     width = 960 - margin.left - margin.right,
     height = 500 - margin.top - margin.bottom;
 // 2.
 //WHAT ARE x AND y ?
+/*x serves to return a scaled display of values: here we used rangeRoundBands to divide the entire chart width into equally-width bands with a padding of 0.1.
+Similalry, y represents y-axis:*/
 var x = d3.scale.ordinal()
     .rangeRoundBands([0, width], .1);
 
@@ -13,14 +17,18 @@ var y = d3.scale.linear()
     
 // 3.
 //HOW DO THEY x AND y AXIS GET DRAWN?
+/*d3.svg.axis() returns a default axis, and if scale() is 
+specified with an predetermined array it will show as the x or y controls */
 var xAxis = d3.svg.axis()
     .scale(x)
-    .orient("bottom");
-//WHAT'S THIS?
+    .orient("bottom");/* 
+.orient controls orientation, where "bottom" return a display of horizontal axis with ticks below;
+"left"returns a vertical axis with tick on the left;*/ 
 var yAxis = d3.svg.axis()
     .scale(y)
     .orient("left")
-    .ticks(10, "%");
+    .ticks(10, "%");/* .ticks specifis arguments of the scale: 10 ticks in total in the format of %*/
+
 //4.
 //WHERE DOES THIS APPEAR? WHAT DOES IT LOOK LIKE IN YOUR BROWSER INSPECTOR?
 var svg = d3.select(".chart").append("svg")
