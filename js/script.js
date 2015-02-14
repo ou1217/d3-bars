@@ -1,6 +1,6 @@
 // 1.
 //WHAT'S GOING ON HERE? WHERE DOES IT GET USED AND WHAT DOES IT AFFECT?
-/*Define the dimension of the chartting area and is used later:height equals the css-controlled container height of 500px minus the top and bottom margins; the same for the width.*/.
+/*Define the dimension of the chartting area and is used later:height equals the css-controlled container height of 500px minus the top and bottom margins; the same for the width.*/
 
 var margin = {top: 20, right: 20, bottom: 30, left: 40},
     width = 960 - margin.left - margin.right,
